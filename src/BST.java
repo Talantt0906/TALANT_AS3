@@ -15,12 +15,12 @@ public class BST<K extends Comparable<K>, V> {
         }
     }
 
-    // 1. Add size (5%)
+
     public int size() {
         return size;
     }
 
-    // 2. Implement put method
+
     public void put(K key, V val) {
         if (root == null) {
             root = new Node(key, val);
@@ -51,7 +51,7 @@ public class BST<K extends Comparable<K>, V> {
         }
     }
 
-    // 3. Implement get method
+
     public V get(K key) {
         Node current = root;
         while (current != null) {
@@ -67,7 +67,7 @@ public class BST<K extends Comparable<K>, V> {
         return null;
     }
 
-    // 4. Implement delete method
+
     public void delete(K key) {
         root = delete(root, key);
     }
@@ -115,7 +115,7 @@ public class BST<K extends Comparable<K>, V> {
         return node;
     }
 
-    // 5. Implement in-order traversal for iterator() (10%)
+
     public Iterable<K> iterator() {
         List<K> list = new ArrayList<>();
         Stack<Node> stack = new Stack<>();
@@ -135,7 +135,7 @@ public class BST<K extends Comparable<K>, V> {
         return list;
     }
 
-    // 6. Make it possible for both key and value to be accessible during iteration (10%)
+
     public Iterable<Map.Entry<K, V>> entryIterator() {
         List<Map.Entry<K, V>> list = new ArrayList<>();
         Stack<Node> stack = new Stack<>();
@@ -155,14 +155,14 @@ public class BST<K extends Comparable<K>, V> {
         return list;
     }
 
-    // Example usage in main method for testing
+
     public static void main(String[] args) {
         BST<Integer, String> tree = new BST<>();
         tree.put(1, "One");
         tree.put(2, "Two");
         tree.put(3, "Three");
 
-        // Get key-value pairs using entryIterator
+       
         for (Map.Entry<Integer, String> elem : tree.entryIterator()) {
             System.out.println("key is " + elem.getKey() + " and value is " + elem.getValue());
         }
